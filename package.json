@@ -1,7 +1,7 @@
 {
-  "name": "rust-wasm-template",
+  "name": "q-chase",
   "version": "0.1.0",
-  "description": "A base template with rust, wasm-bindgen, webpack, mocha and babel",
+  "description": "A cat and mouse ecosystem using q-learning",
   "main": "index.js",
   "scripts": {
     "build": "webpack --config webpack.config.js",
@@ -13,13 +13,13 @@
     "url": "git+https://github.com/h3nnn4n/Rust-Wasm-Template"
   },
   "keywords": [
-    "webassembly",
-    "wasm",
-    "rust",
-    "webpack"
+    "webpack",
+    "typescript",
+    "q-learning",
+    "reinforcement-learning"
   ],
   "author": "Renan S Silva (h3nnn4n) <uber.renan@gmail.com>",
-  "homepage": "https://github.com/h3nnn4n/Rust-Wasm-Template",
+  "homepage": "https://github.com/h3nnn4n/q-chase",
   "devDependencies": {
     "@babel/core": "^7.4.0",
     "@babel/plugin-syntax-dynamic-import": "^7.2.0",
@@ -36,14 +36,22 @@
     "sinon": "^7.3.0",
     "ts-loader": "^5.3.3",
     "typescript": "^3.4.4",
-    "webpack": "^4.30.0",
+    "webpack": "^4.41.2",
     "webpack-cli": "^3.3.0",
     "webpack-dev-server": "^3.3.1"
   },
   "dependencies": {
+    "autoprefixer": "^9.7.2",
+    "bootstrap": "^4.3.1",
+    "css-loader": "^3.2.0",
     "es6-promise": "^4.2.6",
     "jquery": "^3.4.0",
+    "node-sass": "^4.13.0",
+    "popper.js": "^1.16.0",
+    "postcss-loader": "^3.0.0",
+    "sass-loader": "^8.0.0",
     "sprintf-js": "^1.1.2",
+    "style-loader": "^1.0.0",
     "tslib": "^1.9.3"
   }
 }

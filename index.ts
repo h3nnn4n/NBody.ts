@@ -1,14 +1,6 @@
-var Rust: any;
+import './src/scss/app.scss';
+import 'bootstrap';
+import { main } from './src/main';
 
-const init = () => {
-  let a = Rust.a_plus_b(2, 2);
+main();
 
-  $('#test').text(a);
-}
-
-export const load = () => {
-  (() => import( /* webpackChunkName: "ilovewasm" */ './pkg/ilovewasm.js').then(module => {
-    Rust = module;
-    init();
-  }))();
-}
