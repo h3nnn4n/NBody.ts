@@ -81,7 +81,7 @@ class Body {
     }
   }
 
-  offsetMomentum(px: number, py: number, pz: number) {
+  offset_momentum(px: number, py: number, pz: number) {
     this.velocity_x = -px / SOLAR_MASS;
     this.velocity_y = -py / SOLAR_MASS;
     this.velocity_z = -pz / SOLAR_MASS;

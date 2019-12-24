@@ -46,6 +46,22 @@ class NBody {
     }
   }
 
+  offset_momentum() {
+    let px = 0;
+    let py = 0;
+    let pz = 0;
+
+    for (var i = 0, len = this.nbodies; i < len; i++) {
+      let body_i = this.bodies[i];
+
+      px += body_i.velocity_x * body_i.mass;
+      py += body_i.velocity_y * body_i.mass;
+      pz += body_i.velocity_z * body_i.mass;
+    }
+
+    this.bodies[0].offset_momentum(px, py, pz);
+  }
+
   get_total_energy() {
     let energy = 0.0;
 

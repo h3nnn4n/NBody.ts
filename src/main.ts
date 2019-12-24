@@ -29,6 +29,8 @@ export const main = () => {
   nbody.add_body(new Body('uranus'));
   nbody.add_body(new Body('neptune'));
 
+  nbody.offset_momentum();
+
   let energy = nbody.get_total_energy();
   console.log(energy);
   $('#test').text(energy);
