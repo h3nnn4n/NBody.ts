@@ -12,6 +12,40 @@ class NBody {
     console.log('added a body: ' + body.name + '\nnbodies: ' + this.nbodies);
   }
 
+  step(dt: number) {
+    for (let i = 0, len = this.nbodies; i < len; i++) {
+      let body_i = this.bodies[i];
+
+      for (let j = i + 1, len = this.nbodies; j < len; j++) {
+        let body_j = this.bodies[j];
+
+        let dx = body_i.position_x - body_j.position_x;
+        let dy = body_i.position_y - body_j.position_y;
+        let dz = body_i.position_z - body_j.position_z;
+
+        let dSquared = dx * dx + dy * dy + dz * dz;
+        let distance = Math.sqrt(dSquared);
+        let mag = dt / (dSquared * distance);
+
+        body_i.velocity_x -= dx * body_j.mass * mag;
+        body_i.velocity_y -= dy * body_j.mass * mag;
+        body_i.velocity_z -= dz * body_j.mass * mag;
+
+        body_j.velocity_x += dx * body_i.mass * mag;
+        body_j.velocity_y += dy * body_i.mass * mag;
+        body_j.velocity_z += dz * body_i.mass * mag;
+      }
+    }
+
+    for (let i = 0, len = this.nbodies; i < len; i++) {
+      let body = this.bodies[i];
+
+      body.position_x += dt * body.velocity_x;
+      body.position_y += dt * body.velocity_y;
+      body.position_z += dt * body.velocity_z;
+    }
+  }
+
   get_total_energy() {
     let energy = 0.0;
 

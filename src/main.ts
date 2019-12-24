@@ -1,6 +1,22 @@
 import { Body } from './body';
 import { NBody } from './nbody';
 
+
+const step = (nbody: NBody) => {
+  for (var j = 0, len = 100000; j < len; j++) {
+    nbody.step(0.01);
+  }
+
+  let energy = nbody.get_total_energy();
+  $('#test').text(energy);
+
+  setTimeout(
+    () => step(nbody),
+    1
+  );
+}
+
+
 export const main = () => {
   $('#test').text('init');
   console.log('starting');
@@ -13,5 +29,9 @@ export const main = () => {
   nbody.add_body(new Body('uranus'));
   nbody.add_body(new Body('neptune'));
 
-  $('#test').text(nbody.get_total_energy());
+  let energy = nbody.get_total_energy();
+  console.log(energy);
+  $('#test').text(energy);
+
+  step(nbody);
 }
