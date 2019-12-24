@@ -1,7 +1,6 @@
-# Q-Chase
+# N-Body
 
-A simple ecosystem with a cat and mouse system.
-Cats eat mice and mice run away from cats.
+A simple NBody simulation based of [Benchmarks Game](https://benchmarksgame-team.pages.debian.net/benchmarksgame/performance/nbody.html).
 
 ## How to use
 
