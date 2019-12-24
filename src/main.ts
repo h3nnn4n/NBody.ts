@@ -1,18 +1,21 @@
 import { Body } from './body';
 import { NBody } from './nbody';
+import { render } from './rendering';
 
 
 const step = (nbody: NBody) => {
-  for (var j = 0, len = 100000; j < len; j++) {
+  for (var i = 0, len = 5; i < len; i++) {
     nbody.step(0.01);
   }
 
   let energy = nbody.get_total_energy();
   $('#test').text(energy);
 
+  render(nbody);
+
   setTimeout(
     () => step(nbody),
-    1
+    0
   );
 }
 
